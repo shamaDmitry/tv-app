@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import router from 'next/router'
 import Layout from '../components/Layout';
 
+import '../styles/index.scss';
+
 export default function Index(props) {
   const [term, setTerm] = useState('');
 
@@ -31,7 +33,7 @@ export default function Index(props) {
           </button>
         </div>
 
-        <h1>
+        <h1 className="example">
           Index
         </h1>
       </Layout>
