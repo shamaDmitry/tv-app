@@ -20,7 +20,7 @@ const Shows = ({shows}) => (
 );
 
 Shows.getInitialProps = async () => {
-    const res = await fetch('https://api.tvmaze.com/shows');
+  const res = await fetch('https://api.tvmaze.com/shows');
   const shows = await res.json();
 
   return {
