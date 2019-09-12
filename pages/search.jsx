@@ -1,12 +1,11 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import Layout from '../components/Layout/index';
 import SearchResult from '../components/SerchResult';
 
 
 const Search = ({result}) => {
   return (
-    <Layout>
+    <section>
       <h1>
         Search
       </h1>
@@ -16,7 +15,7 @@ const Search = ({result}) => {
           <SearchResult key={item.show.id} data={item}/>
         ))}
       </ol>
-    </Layout>
+    </section>
   )
 };
 

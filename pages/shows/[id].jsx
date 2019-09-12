@@ -1,11 +1,9 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import Layout from '../../components/Layout/index';
 
 const Show = ({show}) => {
-
   return (
-    <Layout>
+    <section>
       <h1>
         Show Item
       </h1>
@@ -20,7 +18,7 @@ const Show = ({show}) => {
         </li>
         <li dangerouslySetInnerHTML={{__html: show.summary}} />
       </ul>
-    </Layout>
+    </section>
   )
 };
 

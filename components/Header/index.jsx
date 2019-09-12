@@ -44,6 +44,8 @@ const Header = () => (
           <MenuLink href="/" title="home"/>
 
           <MenuLink href="/shows" title="shows"/>
+
+          <MenuLink href="/about" title="about"/>
         </nav>
       </header>
     </>

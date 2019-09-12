@@ -1,22 +1,19 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import Layout from '../components/Layout/index';
-import ShowCard from '../components/ShowCard/index';
+import ShowCard from '../components/ShowCard/';
 
 const Shows = ({shows}) => (
-    <>
-      <Layout>
-        <h1>
-          Shows
-        </h1>
+  <section>
+    <h1>
+      Shows
+    </h1>
 
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
-          {shows.map((show) => (
-              <ShowCard key={show.id} data={show}/>
-          ))}
-        </div>
-      </Layout>
-    </>
+    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      {shows.map((show) => (
+        <ShowCard key={show.id} data={show}/>
+      ))}
+    </div>
+  </section>
 );
 
 Shows.getInitialProps = async () => {

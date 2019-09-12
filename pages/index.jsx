@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import router from 'next/router'
-import Layout from '../components/Layout';
-
-import '../styles/index.scss';
 
 export default function Index(props) {
   const [term, setTerm] = useState('');
@@ -16,26 +13,20 @@ export default function Index(props) {
   }
 
   return (
-      <Layout>
-        <style global jsx>{`
-          body {
-            margin: 0;
-          }
-      `}</style>
+    <section>
+      <div>
+        <input type="text" placeholder="search"
+               value={term}
+               onChange={handleTermChange}/>
 
-        <div>
-          <input type="text" placeholder="search"
-                 value={term}
-                 onChange={handleTermChange}/>
+        <button onClick={() => searchShow(term)}>
+          go
+        </button>
+      </div>
 
-          <button onClick={() => searchShow(term)}>
-            go
-          </button>
-        </div>
-
-        <h1 className="example">
-          Index
-        </h1>
-      </Layout>
+      <h1 className="example">
+        Index
+      </h1>
+    </section>
   )
 }
