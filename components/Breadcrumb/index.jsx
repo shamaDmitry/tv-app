@@ -1,20 +1,17 @@
 import Link from 'next/link';
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-const Breadcrumb = ({data}) => {
-  const _data = data.split('/');
+const _Breadcrumb = ({data}) => {
+  // const _data = data.split('/');
 
   return (
-    <nav style={{ backgroundColor: '#ccc', color: '#fff', padding: '25px' }}>
-      <Link href="/">
-        <a style={{margin: '15px'}}>Home</a>
-      </Link>
-
-      {
-        _data.map((item, key) => <Link href={item} key={key}><a style={{margin: '15px'}}>{item}</a></Link>)
-      }
-
-    </nav>
+    <>
+      <Breadcrumb>
+        <BreadcrumbItem><a href="#">Home</a></BreadcrumbItem>
+        <BreadcrumbItem active>Library</BreadcrumbItem>
+      </Breadcrumb>
+    </>
   )
 };
 
-export default Breadcrumb;
+export default _Breadcrumb;

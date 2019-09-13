@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import '../styles/Layout/index.scss';
+import '../styles/shared/index.scss';
+import '../styles/index.scss';
 
 class Layout extends React.Component {
   render() {

@@ -1,0 +1,11 @@
+@mixin respond-to-max($maxWidth) {
+  @media (max-width: #{$maxWidth}px) {
+    @content
+  }
+}
+
+@mixin respond-to-min($minWidth) {
+  @media (min-width: #{$minWidth}px) {
+    @content
+  }
+}

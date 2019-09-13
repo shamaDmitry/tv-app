@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import router from 'next/router'
+import router from 'next/router';
+import { Button } from 'reactstrap';
+import _Breadcrumb from '../components/Breadcrumb';
 
 export default function Index(props) {
   const [term, setTerm] = useState('');
@@ -15,13 +17,16 @@ export default function Index(props) {
   return (
     <section>
       <div>
+        <_Breadcrumb />
+
         <input type="text" placeholder="search"
                value={term}
                onChange={handleTermChange}/>
 
-        <button onClick={() => searchShow(term)}>
+
+        <Button color="primary" onClick={() => searchShow(term)}>
           go
-        </button>
+        </Button>
       </div>
 
       <h1 className="example">
