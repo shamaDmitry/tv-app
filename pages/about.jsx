@@ -1,9 +1,15 @@
-const About = () => (
-  <section>
+const About = ({props}) => (
+  <section className="w-about container">
     <h1>
-      <span className="icon-display" />
       About
     </h1>
+
+    <ul className="list-unstyled">
+     <li>next js</li>
+     <li>react js</li>
+     <li>isomorphic unfetch</li>
+     <li>nprogress</li>
+    </ul>
   </section>
 );
 

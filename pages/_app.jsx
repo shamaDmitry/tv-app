@@ -5,12 +5,11 @@ import Footer from '../components/Footer';
 import NProgress from 'nprogress'
 import Router from 'next/router'
 
-import '../styles/Layout/index.scss';
+import '../styles/layout/index.scss';
 import '../styles/shared/index.scss';
 import '../styles/index.scss';
 
-Router.events.on('routeChangeStart', url => {
-  console.log(`Loading: ${url}`);
+Router.events.on('routeChangeStart', (url) => {
   NProgress.start();
 });
 Router.events.on('routeChangeComplete', () => NProgress.done());

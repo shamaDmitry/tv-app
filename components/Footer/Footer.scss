@@ -1,0 +1,43 @@
+@import "../../styles/vars/colors";
+
+.footer {
+  color: #fff;
+  padding: 35px 0;
+  margin-top: auto;
+  background-color: #0e1015;
+
+  &-copy {
+    margin: 0;
+  }
+
+  &-social {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & > li {
+
+     & > a {
+        color: #fff;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        font-size: 18px;
+        align-items: center;
+        border: 1px solid #fff;
+        justify-content: center;
+        transition: opacity linear .2s;
+
+        &:hover {
+          opacity:.5;
+          text-decoration: none;
+        }
+      }
+
+      & + li {
+        margin-left: 20px;
+      }
+    }
+  }
+}

@@ -2,16 +2,38 @@ import React from 'react';
 import Link from 'next/link';
 
 const ShowCard = ({data}) => {
-  return (
-    <Link href="/shows/[id]" as={`/shows/${data.id}`}>
-      <a style={{display: 'flex', flexDirection: 'column', margin: '10px'}}>
-        <img src={data.image.medium} alt=""/>
+  console.log('card data', data);
 
-        <p>
-          {data.name}
-        </p>
-      </a>
-    </Link>
+  return (
+    <>
+      <section className="b-show-card">
+        <Link href="/shows/[id]" as={`/shows/${data.id}`}>
+          <figure className="b-show-card-image">
+            <img src={data.image.medium} alt=""/>
+          </figure>
+        </Link>
+
+        <Link href="/shows/[id]" as={`/shows/${data.id}`}>
+          <a className="b-show-card-title">
+            {data.name}
+          </a>
+        </Link>
+      </section>
+
+      <Link href="/shows/[id]" as={`/shows/${data.id}`}>
+        <a className="b-card">
+          <img src={data.image.medium} alt=""/>
+
+          <p>
+            {data.status}
+          </p>
+
+          <p>
+
+          </p>
+        </a>
+      </Link>
+    </>
   )
 };
 

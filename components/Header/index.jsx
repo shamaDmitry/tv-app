@@ -1,54 +1,62 @@
+import React from 'react';
 import Link from 'next/link';
+import _ from 'lodash';
 
-const MenuLink = (props) => (
-    <>
-      <style jsx>{`
-        a {
-          color: #20232a;
-          margin:  15px 0;
-          font-size: 18px;
-          text-decoration: none;
-          display: inline-block;
-          text-transform: capitalize;
-          font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-        }
+import './Header.scss';
 
-        a + a {
-          margin-left: 15px;
-        }
-    `}</style>
+const menuList = [
+  // {
+  //   id: _.uniqueId('id_'),
+  //   href: '/',
+  //   title: 'home',
+  // },
+  {
+    id: _.uniqueId('id_'),
+    href: '/shows',
+    title: 'shows',
+  },
+  {
+    id: _.uniqueId('id_'),
+    href: '/about',
+    title: 'about',
+  },
+];
 
-      <Link href={`${props.href}`}>
-        <a>
-          {props.title}
-        </a>
-      </Link>
-    </>
+const MenuLink = ({props}) => (
+  <Link href={props.href}>
+    <a className="b-nav-link">
+      {props.title}
+    </a>
+  </Link>
 );
 
 const Header = () => (
-    <>
-      <style jsx>{`
-        header {
-          margin: 0 0 15px;
-        }
+  <header className="w-nav">
+    <div className="container">
+      <div className="w-nav-logo">
+        <Link href="/">
+          <a className="icon-display" />
+        </Link>
+      </div>
 
-        nav {
-          margin: 0 auto;
-          max-width: 1200px;
-        }
-    `}</style>
+      <div>
+        <input type="text" placeholder="search"
 
-      <header>
-        <nav>
-          <MenuLink href="/" title="home"/>
+               />
 
-          <MenuLink href="/shows" title="shows"/>
 
-          <MenuLink href="/about" title="about"/>
-        </nav>
-      </header>
-    </>
+        <button>
+          go
+        </button>
+      </div>
+
+      <nav className="b-nav">
+        {menuList.map((menuItem) => (
+          <MenuLink props={menuItem} key={menuItem.id}/>
+        ))}
+      </nav>
+    </div>
+  </header>
 );
 
 export default Header;

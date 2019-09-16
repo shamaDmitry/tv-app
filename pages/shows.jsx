@@ -3,12 +3,12 @@ import fetch from 'isomorphic-unfetch';
 import ShowCard from '../components/ShowCard/';
 
 const Shows = ({shows}) => (
-  <section>
+  <section className="container">
     <h1>
       Shows
     </h1>
 
-    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+    <div className="w-shows">
       {shows.map((show) => (
         <ShowCard key={show.id} data={show}/>
       ))}

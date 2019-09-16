@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Show = ({show}) => {
   return (
-    <section>
+    <section className="container">
       <h1>
         Show Item
       </h1>
