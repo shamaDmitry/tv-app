@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import router from 'next/router';
 import { Button } from 'reactstrap';
-import _Breadcrumb from '../components/Breadcrumb';
 
 export default function Index(props) {
   const [term, setTerm] = useState('');
@@ -16,9 +15,9 @@ export default function Index(props) {
 
   return (
     <section>
-      <div>
-        <_Breadcrumb />
+      <span className="icon-display" />
 
+      <div>
         <input type="text" placeholder="search"
                value={term}
                onChange={handleTermChange}/>

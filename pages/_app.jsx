@@ -3,6 +3,8 @@ import App from 'next/app';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+// import '../static/fonts/icomoon/style.css';
+
 import '../styles/Layout/index.scss';
 import '../styles/shared/index.scss';
 import '../styles/index.scss';
