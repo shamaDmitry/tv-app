@@ -39,17 +39,6 @@ const Header = () => (
         </Link>
       </div>
 
-      <div>
-        <input type="text" placeholder="search"
-
-               />
-
-
-        <button>
-          go
-        </button>
-      </div>
-
       <nav className="b-nav">
         {menuList.map((menuItem) => (
           <MenuLink props={menuItem} key={menuItem.id}/>

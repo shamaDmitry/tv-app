@@ -1,4 +1,24 @@
+@import "./styles/mixins/responsive";
+
 .w-shows {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -15px;
+
+  & > .b-show-card {
+    margin: 15px;
+    flex: 1 1 20%;
+
+    @include respond-to-max(900) {
+      flex: 1 1 25%;
+    }
+
+    @include respond-to-max(767) {
+      flex: 1 1 40%;
+    }
+
+    @include respond-to-max(580) {
+      flex: 1 1 90%;
+    }
+  }
 }

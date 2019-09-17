@@ -2,6 +2,8 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import ShowCard from '../components/ShowCard/';
 
+import { API_ROOT } from '../constants';
+
 const Shows = ({shows}) => (
   <section className="container">
     <h1>
@@ -17,7 +19,7 @@ const Shows = ({shows}) => (
 );
 
 Shows.getInitialProps = async () => {
-  const res = await fetch('https://api.tvmaze.com/shows');
+  const res = await fetch(`${API_ROOT}/shows`);
   const shows = await res.json();
 
   return {

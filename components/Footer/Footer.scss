@@ -8,6 +8,7 @@
 
   &-copy {
     margin: 0;
+    font-size: 14px;
   }
 
   &-social {
@@ -20,10 +21,10 @@
 
      & > a {
         color: #fff;
-        width: 45px;
-        height: 45px;
+        width: 30px;
+        height: 30px;
         display: flex;
-        font-size: 18px;
+        font-size: 14px;
         align-items: center;
         border: 1px solid #fff;
         justify-content: center;
