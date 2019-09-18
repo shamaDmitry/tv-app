@@ -5,8 +5,6 @@ import { IMAGE_PLACEHOLDER_MEDIUM } from '../../constants';
 import './ShowCard.scss';
 
 const ShowCard = ({data}) => {
-  console.log('card data', data);
-
   return (
     <section className="b-show-card">
       <Link href="/shows/[id]" as={`/shows/${data.id}`}>
@@ -15,7 +13,7 @@ const ShowCard = ({data}) => {
 
           <div className="b-show-card-tags">
             {data.genres.map((genre, key) => (
-              <div className="badge badge-secondary" key={key}>
+              <div className="badge" key={key}>
                 {genre}
               </div>
             ))}

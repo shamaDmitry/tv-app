@@ -1,5 +1,22 @@
 @import "./styles/mixins/responsive";
 
+
+.b-cast {
+  padding: 50px 0;
+
+  &-row {
+    display: flex;
+    border: 1px solid red;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & + .b-cast-row {
+      margin-top: 15px;
+    }
+  }
+}
+
+
 .w-shows {
   display: flex;
   flex-wrap: wrap;

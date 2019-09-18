@@ -1,13 +1,20 @@
 import React from 'react';
-// import Link from 'next/link';
-import _ from 'lodash';
+import Link from 'next/link';
 
 const SearchResult = ({data}) => {
+  console.log('data search', data);
+
   return (
     <li>
-      <p>
-        {data.show.name}
-      </p>
+      <h4>
+        <Link href="/shows/[id]" as={`/shows/${data.show.id}`}>
+          {data.show.name}
+        </Link>
+      </h4>
+
+      <div>
+        Rating: {data.score}
+      </div>
 
       <p dangerouslySetInnerHTML={{__html: data.show.summary}} />
 

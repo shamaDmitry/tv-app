@@ -5,7 +5,7 @@ import SearchResult from '../components/SerchResult';
 
 const Search = ({result}) => {
   return (
-    <section>
+    <section className="container">
       <h1>
         Search
       </h1>

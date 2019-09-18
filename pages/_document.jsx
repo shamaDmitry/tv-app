@@ -10,8 +10,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="stylesheet" href="./static/fonts/icomoon/style.css"/>
-          <link rel="stylesheet" href="./static/styles/nprogress.css"/>
+          <link rel="stylesheet" href="/static/icon-fonts/style.css"/>
+          <link rel="stylesheet" href="/static/styles/nprogress.css"/>
         </Head>
 
         <body>
