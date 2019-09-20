@@ -13,6 +13,8 @@ export default function Index(props) {
     if (term) return router.push(`/search?q=${term}`);
   }
 
+  // console.log('this.context', this.context);
+
   return (
     <section className="w-index">
       <Container>

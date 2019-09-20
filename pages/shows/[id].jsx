@@ -68,14 +68,14 @@ const Show = (props) => {
           <div className="b-cast-row" key={itemData.character.id}>
             <ol>
               <li>
-                <img src={itemData.character.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
+                <img src={itemData.character.image && itemData.character.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
                 <h5>{itemData.character.name}</h5>
               </li>
             </ol>
 
             <ol>
               <li>
-                <img src={itemData.person.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
+                <img src={itemData.person.image && itemData.person.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
                 <h5>{itemData.person.name}</h5>
                 <p>birthday: {itemData.person.birthday}</p>
               </li>
