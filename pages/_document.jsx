@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="stylesheet" href="/static/icon-fonts/style.css"/>
-          <link rel="stylesheet" href="/static/styles/nprogress.css"/>
+          {/*<link rel="stylesheet" href="/static/styles/nprogress.css"/>*/}
         </Head>
 
         <body>

@@ -2,13 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 
 const SearchResult = ({data}) => {
-  console.log('data search', data);
 
   return (
     <li>
       <h4>
         <Link href="/shows/[id]" as={`/shows/${data.show.id}`}>
-          {data.show.name}
+          <a>{data.show.name}</a>
         </Link>
       </h4>
 
@@ -16,7 +15,9 @@ const SearchResult = ({data}) => {
         Rating: {data.score}
       </div>
 
-      <p dangerouslySetInnerHTML={{__html: data.show.summary}} />
+      <p>
+        {data.show.summary}
+      </p>
 
       <p>
         <a href={data.show.url} target="_blank">

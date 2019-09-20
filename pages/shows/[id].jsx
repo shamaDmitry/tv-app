@@ -15,8 +15,6 @@ const Show = (props) => {
     episodes,
   } = props;
 
-  console.log('props', props);
-
   const groupedEpisodes = _.chain(episodes)
     .groupBy('season')
     .map((currentItem) => {
@@ -35,7 +33,7 @@ const Show = (props) => {
       </h1>
 
       <figure>
-        <img src={show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
+        <img src={show.image && show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
       </figure>
 
       <ul>

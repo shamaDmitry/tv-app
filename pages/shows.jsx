@@ -2,6 +2,8 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import ShowCard from '../components/ShowCard/';
 
+import { Pagination } from 'antd';
+
 import { API_ROOT } from '../constants';
 
 const Shows = ({shows}) => (
@@ -9,6 +11,9 @@ const Shows = ({shows}) => (
     <h1>
       Shows
     </h1>
+
+
+    <Pagination defaultCurrent={1} total={50} />
 
     <div className="w-shows">
       {shows.map((show) => (
