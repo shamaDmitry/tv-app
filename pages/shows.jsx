@@ -53,7 +53,7 @@ export default class Shows extends Component {
 
         <div className="text-center">
           <Pagination
-            defaultCurrent={this.state.minValue}
+            defaultCurrent={1}
             defaultPageSize={this.state.maxValue}
             onChange={this.handlePaginationChange}
             total={shows.length}

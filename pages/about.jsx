@@ -4,12 +4,15 @@ const About = ({props}) => (
       About
     </h1>
 
-    <ul className="list-unstyled">
-     <li>next js</li>
-     <li>react js</li>
-     <li>isomorphic unfetch</li>
-     <li>nprogress</li>
-    </ul>
+    <h3>
+      <ul>
+        <li>next js</li>
+        <li>react js</li>
+        <li>isomorphic unfetch</li>
+        <li>nprogress</li>
+        <li>ant pagination</li>
+      </ul>
+    </h3>
   </section>
 );
 
