@@ -20,22 +20,23 @@
 .w-shows {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
+  margin: 0 -15px 30px;
+  justify-content: center;
 
   & > .b-show-card {
     margin: 15px;
-    flex: 1 1 20%;
+    flex: 0 1 20%;
 
     @include respond-to-max(900) {
-      flex: 1 1 25%;
+      flex: 0 1 25%;
     }
 
     @include respond-to-max(767) {
-      flex: 1 1 40%;
+      flex: 0 1 40%;
     }
 
     @include respond-to-max(580) {
-      flex: 1 1 90%;
+      flex: 0 1 90%;
     }
   }
 }

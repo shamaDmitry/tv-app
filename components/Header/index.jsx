@@ -5,11 +5,6 @@ import _ from 'lodash';
 import './Header.scss';
 
 const menuList = [
-  // {
-  //   id: _.uniqueId('id_'),
-  //   href: '/',
-  //   title: 'home',
-  // },
   {
     id: _.uniqueId('id_'),
     href: '/shows',
