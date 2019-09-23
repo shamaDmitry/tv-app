@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import router from 'next/router';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export default function Index(props) {
   const [term, setTerm] = useState('');
@@ -13,26 +13,45 @@ export default function Index(props) {
     if (term) return router.push(`/search?q=${term}`);
   }
 
-  // console.log('this.context', this.context);
-
   return (
     <section className="w-index">
-      <Container>
-        <div>
-          <input type="text" placeholder="search"
+      <div className="container">
+        <div className="b-search">
+          <input className="b-search-field" type="text" placeholder="search"
                  value={term}
                  onChange={handleTermChange}/>
 
-
-          <Button color="primary" onClick={() => searchShow(term)}>
-            go
-          </Button>
+          <button className="b-search-btn"
+                  onClick={() => searchShow(term)}>
+            <span className="icon-search" />
+          </button>
         </div>
 
         <h1 className="example">
           Index
         </h1>
-      </Container>
+
+        <div className="align-items-center row">
+          <div className="col-md-7">
+            <figure>
+              <img src="http://via.placeholder.com/800x500" alt="" className="img-fluid"/>
+            </figure>
+          </div>
+
+          <div className="col-md-5">
+            <h2 className="content-header">
+              Lorem ipsum dolor
+            </h2>
+
+            <p className="content-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem
+              consequatur, culpa cupiditate error eveniet ipsum recusandae repellat tempora voluptate voluptatibus
+              voluptatum. Adipisci impedit laborum, maiores molestiae quia veniam voluptatum? Lorem ipsum dolor sit
+              amet, consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

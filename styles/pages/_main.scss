@@ -1,0 +1,24 @@
+@import "../vars/colors";
+
+.b-search {
+  display: flex;
+  margin-bottom: 25px;
+
+  &-field {
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &-btn {
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+  }
+}

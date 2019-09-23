@@ -40,7 +40,7 @@ export default class Shows extends Component {
     return (
       <section className="container">
         <h1>
-          Shows
+          All Shows
         </h1>
 
         <div className="w-shows">

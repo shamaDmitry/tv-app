@@ -7,14 +7,16 @@ const Search = ({result}) => {
   return (
     <section className="container">
       <h1>
-        Search
+        Search page
       </h1>
 
-      <ol>
-        {result && result.map((item) => (
-          <SearchResult key={item.show.id} data={item}/>
-        ))}
-      </ol>
+      {result ? result.map((item) => (
+        <SearchResult key={item.show.id} data={item}/>
+      )) : (
+        <h3 className="text-center mt-5">
+          Nothing is find
+        </h3>
+      )}
     </section>
   )
 };
