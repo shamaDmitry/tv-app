@@ -2,21 +2,82 @@
 
 
 .b-cast {
+  display: flex;
+  margin-bottom: 15px;
+
+  &-image {
+    flex-shrink: 0;
+    height: 160px;
+  }
+
+  &-inner {
+    flex: 1 1 auto;
+    padding-left: 20px;
+  }
+
+  &-name {
+    font-size: 22px;
+    font-weight: 300;
+  }
+}
+.b-show-summary {
+  font-size: 16px;
+}
+.b-show-info {
+  padding: 1rem;
+  background-color: #F7F7F7;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .15);
+
+  &-head {
+    font-size: 25px;
+    font-weight: 400;
+  }
+}
+.b-show-list {
+  color: #000;
+  font-size: 16px;
+
+  & > li + li {
+    margin-top: 5px;
+  }
+
+  &-key {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  &-value {
+    text-transform: lowercase;
+
+    & > .badge + .badge {
+      margin-left: 5px;
+    }
+  }
+}
+
+
+.w-cast {
   padding: 50px 0;
 
   &-row {
     display: flex;
-    border: 1px solid red;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+
+    & > .b-cast {
+      width: 50%;
+
+      @include respond-to-max(900) {
+        width: 100%;
+      }
+    }
 
     & + .b-cast-row {
       margin-top: 15px;
     }
   }
 }
-
-
 .w-shows {
   display: flex;
   flex-wrap: wrap;

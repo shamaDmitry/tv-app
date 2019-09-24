@@ -11,7 +11,7 @@ const ShowCard = ({data}) => {
         <figure className="b-show-card-image">
           <img src={data.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
 
-          <div className="b-show-card-tags">
+          <div className="b-tags">
             {data.genres.map((genre, key) => (
               <div className="badge" key={key}>
                 {genre}

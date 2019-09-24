@@ -1,7 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import SearchResult from '../components/SerchResult';
-
+import SearchResult from '../components/SearchResult';
 
 const Search = ({result}) => {
   return (
@@ -10,7 +9,7 @@ const Search = ({result}) => {
         Search page
       </h1>
 
-      {result ? result.map((item) => (
+      {result.length ? result.map((item) => (
         <SearchResult key={item.show.id} data={item}/>
       )) : (
         <h3 className="text-center mt-5">

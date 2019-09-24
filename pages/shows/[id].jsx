@@ -9,6 +9,8 @@ import {
 } from "../../constants";
 
 const Show = (props) => {
+  console.log('props', props);
+
   const {
     cast,
     show,
@@ -27,68 +29,111 @@ const Show = (props) => {
     .value();
 
   return (
-    <section className="container">
-      <h1>
-        Show Item
-      </h1>
+    <section className="w-show container">
+      <h2>
+        {show.name}
+      </h2>
 
-      <figure>
-        <img src={show.image && show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
-      </figure>
-
-      <ul>
-        <li>
-          <h4>
-            {show.name}
-          </h4>
-        </li>
-
-        {show.officialSite ?
-          (<li>
-            <a href={show.officialSite} target="_blank">{show.officialSite}</a>
-          </li>)
-          :
-          (<li>
-            no site
-          </li>)}
-
-        <li dangerouslySetInnerHTML={{__html: show.summary}}/>
-      </ul>
-
-      <section className="b-cast">
-        <div className="b-cast-row">
-          <h3>Character</h3>
-
-          <h3>Person</h3>
+      <div className="row">
+        <div className="col-sm-3">
+          <figure className="b-image">
+            <img className="img-fluid"
+                 src={show.image && show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
+          </figure>
         </div>
 
-        {cast.map((itemData) => (
-          <div className="b-cast-row" key={itemData.character.id}>
-            <ol>
-              <li>
-                <img src={itemData.character.image && itemData.character.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
-                <h5>{itemData.character.name}</h5>
-              </li>
-            </ol>
+        <div className="col-sm-9">
+          <div className="b-show-summary" dangerouslySetInnerHTML={{__html: show.summary}}/>
 
-            <ol>
+          <section className="b-show-info">
+            <h1 className="b-show-info-head">
+              Show Info
+            </h1>
+
+            <ul className="b-show-list list-unstyled">
               <li>
-                <img src={itemData.person.image && itemData.person.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
-                <h5>{itemData.person.name}</h5>
-                <p>birthday: {itemData.person.birthday}</p>
+                <strong className="b-show-list-key">Network:</strong>
+                <span className="b-show-list-value">{show.network.name}</span>
               </li>
-            </ol>
-          </div>
-        ))}
+
+              <li>
+                <strong className="b-show-list-key">Schedule:</strong>
+
+                <span className="b-show-list-value">
+                  {show.schedule.days.map((day, index) => (
+                    <span key={index}>{`${day}, `}</span>
+                  ))}
+
+                  at {show.schedule.time} ({show.runtime} min)
+                </span>
+              </li>
+
+              <li>
+                <strong className="b-show-list-key">Status:</strong>
+                <span className="b-show-list-value">{show.status}</span>
+              </li>
+
+              <li>
+                <strong className="b-show-list-key">Show Type:</strong>
+                <span className="b-show-list-value">{show.type}</span>
+              </li>
+
+              <li>
+                <strong className="b-show-list-key">Genres:</strong>
+                <span className="b-show-list-value">
+                  {show.genres.map((genre, index) => (
+                    <span className="badge badge-primary" key={index}>{genre}</span>
+                  ))}
+                </span>
+              </li>
+
+              {show.officialSite ?
+                (<li>
+                  <strong className="b-show-list-key">Official site:</strong>
+                  <span className="b-show-list-value">
+                    <a href={show.officialSite} target="_blank">{show.officialSite}</a>
+                  </span>
+                </li>)
+                :
+                (null)}
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <section className="w-cast">
+        <h3 className="w-cast-title">
+          Cast
+        </h3>
+
+
+        <div className="w-cast-row">
+          {cast.map((itemData) => (
+            <section className="b-cast" key={itemData.character.id}>
+              <img className="b-cast-image img-fluid"
+                   src={itemData.person.image && itemData.person.image.medium || IMAGE_PLACEHOLDER_MEDIUM}/>
+
+              <div className="b-cast-inner">
+                <h3 className="b-cast-name">
+                  {itemData.person.name}
+                </h3>
+
+                <p>
+                  as {itemData.character.name}
+                </p>
+              </div>
+            </section>
+          ))}
+        </div>
       </section>
 
       <section>
         {groupedEpisodes.map((season) => {
           return (
             <div key={season.id}>
-              <h1>
+              <h3>
                 Season {season.season}
-              </h1>
+              </h3>
 
               <div>
                 {season.episodes.map((episode) => (

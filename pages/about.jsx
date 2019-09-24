@@ -8,6 +8,8 @@ const About = ({props}) => (
       <ul>
         <li>next js</li>
         <li>react js</li>
+        <li>lodash</li>
+        <li>scss</li>
         <li>isomorphic unfetch</li>
         <li>nprogress</li>
         <li>ant pagination</li>
