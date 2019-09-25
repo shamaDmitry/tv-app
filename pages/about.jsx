@@ -1,4 +1,4 @@
-const About = ({props}) => (
+const About = ({}) => (
   <section className="w-about container">
     <h1>
       About
@@ -8,6 +8,7 @@ const About = ({props}) => (
       <ul>
         <li>next js</li>
         <li>react js</li>
+        <li>tvmaze API</li>
         <li>lodash</li>
         <li>scss</li>
         <li>isomorphic unfetch</li>

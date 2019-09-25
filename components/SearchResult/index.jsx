@@ -10,10 +10,12 @@ const SearchResult = ({data}) => {
     <section className="b-result">
       {/*<JSONPretty data={data}/>*/}
 
-      <figure className="b-result-image">
-        <img className="img-fluid"
-             src={data.show.image && data.show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
-      </figure>
+      <Link href="/shows/[id]" as={`/shows/${data.show.id}`}>
+        <figure className="b-result-image">
+          <img className="img-fluid"
+               src={data.show.image && data.show.image.medium || IMAGE_PLACEHOLDER_MEDIUM} alt=""/>
+        </figure>
+      </Link>
 
       <div className="b-result-inner">
         <div className="b-tags">
@@ -32,7 +34,7 @@ const SearchResult = ({data}) => {
           Rating: {data.score}
         </div>
 
-        <div>
+        <div className="b-tags">
           <div className="badge badge-primary badge-pills">
             {data.show.language}
           </div>
@@ -42,7 +44,9 @@ const SearchResult = ({data}) => {
           </div>
         </div>
 
-        <p dangerouslySetInnerHTML={{__html: data.show.summary}} />
+        <p>
+          {data.show.summary}
+        </p>
 
         <p>
           <a href={data.show.url} target="_blank">

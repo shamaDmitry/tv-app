@@ -9,8 +9,6 @@ import {
 } from "../../constants";
 
 const Show = (props) => {
-  console.log('props', props);
-
   const {
     cast,
     show,
@@ -51,10 +49,14 @@ const Show = (props) => {
             </h1>
 
             <ul className="b-show-list list-unstyled">
-              <li>
-                <strong className="b-show-list-key">Network:</strong>
-                <span className="b-show-list-value">{show.network.name}</span>
-              </li>
+              {show.network ? (
+                <li>
+                  <strong className="b-show-list-key">Network:</strong>
+                  <span className="b-show-list-value">{show.network.name}</span>
+                </li>
+              ) : (
+                null
+              )}
 
               <li>
                 <strong className="b-show-list-key">Schedule:</strong>
