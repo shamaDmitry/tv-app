@@ -28,6 +28,6 @@
     "reactstrap": "^8.0.1"
   },
   "devDependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   }
 }
